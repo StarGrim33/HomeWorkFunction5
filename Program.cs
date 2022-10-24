@@ -8,7 +8,7 @@
             const string CommandShuffle = "Перемешать";
             const string CommandExit = "Выход";
             bool isProgramOn = true;
-            int[] numbers = new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+            int[] numbers = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
 
             ShowMenu(CommandShowArray, CommandShuffle, CommandExit);
 
@@ -28,9 +28,7 @@
                         isProgramOn = false;
                         break;
                 }
-
             }
-
         }
 
         static void ShowMenu(string CommandShowArray, string CommandShuffle, string CommandExit)
@@ -50,7 +48,6 @@
                 numbers[randomNumber] = numbers[i];
                 numbers[i] = temporary;
             }
-
             Console.WriteLine("=>Готово");
         }
 
@@ -62,8 +59,6 @@
             {
                 Console.Write(+numbers[i] + ",");
             }
-
         }
-
     }
 }
