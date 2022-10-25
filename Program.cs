@@ -22,7 +22,7 @@
                         ShowArray(numbers);
                         break;
                     case CommandShuffle:
-                        Shuffle(ref numbers);
+                        Shuffle(numbers);
                         break;
                     case CommandExit:
                         isProgramOn = false;
@@ -37,16 +37,16 @@
             Console.WriteLine($"Программа для перемешивания значений элементов массива\n Выберите опцию: \n1-{CommandShowArray}\n2-{CommandShuffle}\n3-{CommandExit}");
         }
 
-        static void Shuffle(ref int[] numbers)
+        static void Shuffle(int[] numbers)
         {
             Random random = new Random();
 
             for (int i = numbers.Length - 1; i >= 0; i--)
             {
                 int randomNumber = random.Next(i + 1);
-                int temporary = numbers[randomNumber];
+                int temporaryNumber = numbers[randomNumber];
                 numbers[randomNumber] = numbers[i];
-                numbers[i] = temporary;
+                numbers[i] = temporaryNumber;
             }
             Console.WriteLine("=>Готово");
         }
