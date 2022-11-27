@@ -8,7 +8,7 @@
             const string CommandShuffle = "Перемешать";
             const string CommandExit = "Выход";
             bool isProgramOn = true;
-            int[] numbers = new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+            int[] numbers = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
 
             ShowMenu(CommandShowArray, CommandShuffle, CommandExit);
 
@@ -22,15 +22,13 @@
                         ShowArray(numbers);
                         break;
                     case CommandShuffle:
-                        Shuffle(ref numbers);
+                        Shuffle(numbers);
                         break;
                     case CommandExit:
                         isProgramOn = false;
                         break;
                 }
-
             }
-
         }
 
         static void ShowMenu(string CommandShowArray, string CommandShuffle, string CommandExit)
@@ -39,18 +37,17 @@
             Console.WriteLine($"Программа для перемешивания значений элементов массива\n Выберите опцию: \n1-{CommandShowArray}\n2-{CommandShuffle}\n3-{CommandExit}");
         }
 
-        static void Shuffle(ref int[] numbers)
+        static void Shuffle(int[] numbers)
         {
             Random random = new Random();
 
             for (int i = numbers.Length - 1; i >= 0; i--)
             {
                 int randomNumber = random.Next(i + 1);
-                int temporary = numbers[randomNumber];
+                int temporaryNumber = numbers[randomNumber];
                 numbers[randomNumber] = numbers[i];
-                numbers[i] = temporary;
+                numbers[i] = temporaryNumber;
             }
-
             Console.WriteLine("=>Готово");
         }
 
@@ -62,8 +59,6 @@
             {
                 Console.Write(+numbers[i] + ",");
             }
-
         }
-
     }
 }
